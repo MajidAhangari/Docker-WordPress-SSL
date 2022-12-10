@@ -12,4 +12,8 @@ Modificar las líneas 23 y 24 de docker-compose.yaml:
 
 
 
+in docker file modify
+
+VIRTUAL_HOST: tudominio.com        #insert your site name
+LETSENCRYPT_HOST: tudominio.c      #insert your site name
 
