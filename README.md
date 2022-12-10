@@ -17,3 +17,8 @@ in docker file modify
 VIRTUAL_HOST: tudominio.com        #insert your site name
 LETSENCRYPT_HOST: tudominio.c      #insert your site name
 
+************************************************************
+
+
+In order to disable auto login for Phpmyadmin, you should remove PMA_USER and PMA_PASSWORD, just keep PMA_HOSTS,
+then the phpmyadmin will ask for login to access the database.
