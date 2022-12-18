@@ -22,3 +22,9 @@ LETSENCRYPT_HOST: tudominio.c      #insert your site name
 
 In order to disable auto login for Phpmyadmin, you should remove PMA_USER and PMA_PASSWORD, just keep PMA_HOSTS,
 then the phpmyadmin will ask for login to access the database.
+----------------------------------------------------------\
+if nginx docker is stop and while starting it errors 443 and 80 ports are already in use :
+sudo lsof -nP | grep LISTEN
+kill ID
+restart docker nginx again
+---------------------------------
