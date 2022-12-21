@@ -1,14 +1,9 @@
+
+
 # Docker-WordPress-SSL
 WordPress + MySQL + phpMyAdmin + Nginx + SSL - CMS - Docker-compose
 
-Ver en "localhost:80"
-
-phpMyAdmin - ver en "localhost:8080"
-
-Modificar las líneas 23 y 24 de docker-compose.yaml:
-
-23  VIRTUAL_HOST: tudominio.com        #debe ser un dominio válido y DNS apuntando a este servidor
-24  LETSENCRYPT_HOST: tudominio.com    #debe ser un dominio válido y DNS apuntando a este servidor   
+phpMyAdmin "localhost:8080"
 
 
 ********************************************************************************
@@ -30,10 +25,10 @@ restart docker nginx again
 ---------------------------------
 
 php.ini location in docker phpmyadmin
-# First log into the running container
+ First log into the running container
 $ docker exec -it «container_name» /bin/bash
 
-# List folder content
+ List folder content
 $ ls /usr/local/etc/php
 
 
@@ -50,7 +45,6 @@ max_execution_time = 600
 ------------------------------------
 The error “413 – Request Entity Too Large” indicates that web server configured to restrict large file size.
 sudo nano /etc/nginx/nginx.conf
-# set client body size to 64M #
+ set client body size to 64M 
 client_max_body_size 64M;
 ------------------------------------
-
