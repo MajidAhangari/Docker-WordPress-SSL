@@ -5,8 +5,6 @@ WordPress + MySQL + phpMyAdmin + Nginx + SSL - CMS - Docker-compose
 
 phpMyAdmin "localhost:8080"
 
-
-********************************************************************************
 in docker file modify
 
 VIRTUAL_HOST: tudominio.com        insert your site name
@@ -46,4 +44,3 @@ The error “413 – Request Entity Too Large” indicates that web server confi
 sudo nano /etc/nginx/nginx.conf
  set client body size to 64M 
 client_max_body_size 64M;
-------------------------------------
