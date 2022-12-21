@@ -1,6 +1,6 @@
 
 
-# Docker-WordPress-SSL
+ Docker-WordPress-SSL
 WordPress + MySQL + phpMyAdmin + Nginx + SSL - CMS - Docker-compose
 
 phpMyAdmin "localhost:8080"
@@ -9,8 +9,8 @@ phpMyAdmin "localhost:8080"
 ********************************************************************************
 in docker file modify
 
-VIRTUAL_HOST: tudominio.com        #insert your site name
-LETSENCRYPT_HOST: tudominio.c      #insert your site name
+VIRTUAL_HOST: tudominio.com        insert your site name
+LETSENCRYPT_HOST: tudominio.c      insert your site name
 
 ************************************************************
 
