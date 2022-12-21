@@ -12,17 +12,16 @@ in docker file modify
 VIRTUAL_HOST: tudominio.com        insert your site name
 LETSENCRYPT_HOST: tudominio.c      insert your site name
 
-************************************************************
 
-
-In order to disable auto login for Phpmyadmin, you should remove PMA_USER and PMA_PASSWORD, just keep PMA_HOSTS,
+in order to disable auto login for Phpmyadmin, you should remove PMA_USER and PMA_PASSWORD, just keep PMA_HOSTS,
 then the phpmyadmin will ask for login to access the database.
-----------------------------------------------------------\
+
 if nginx docker is stop and while starting it errors 443 and 80 ports are already in use :
 sudo lsof -nP | grep LISTEN
 kill ID
 restart docker nginx again
----------------------------------
+
+
 
 php.ini location in docker phpmyadmin
  First log into the running container
@@ -42,7 +41,7 @@ upload_max_filesize = 64M
 post_max_size = 64M
 max_execution_time = 600
 
-------------------------------------
+
 The error “413 – Request Entity Too Large” indicates that web server configured to restrict large file size.
 sudo nano /etc/nginx/nginx.conf
  set client body size to 64M 
