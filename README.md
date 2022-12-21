@@ -28,3 +28,8 @@ sudo lsof -nP | grep LISTEN
 kill ID
 restart docker nginx again
 ---------------------------------
+The error “413 – Request Entity Too Large” indicates that web server configured to restrict large file size.
+sudo nano /etc/nginx/nginx.conf
+# set client body size to 2M #
+client_max_body_size 2M;
+----------------------------------------------------------
