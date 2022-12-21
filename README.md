@@ -27,7 +27,10 @@ if nginx docker is stop and while starting it errors 443 and 80 ports are alread
 sudo lsof -nP | grep LISTEN
 kill ID
 restart docker nginx again
----------------------------------# First log into the running container
+---------------------------------
+
+php.ini location in docker phpmyadmin
+# First log into the running container
 $ docker exec -it «container_name» /bin/bash
 
 # List folder content
@@ -43,15 +46,6 @@ memory_limit = 64M
 upload_max_filesize = 64M
 post_max_size = 64M
 max_execution_time = 600
-# First log into the running container
-$ docker exec -it «container_name» /bin/bash
-
-# List folder content
-$ ls /usr/local/etc/php
-
-# Which outputs following line
-conf.d  php.ini-development  php.ini-production
-
 
 ------------------------------------
 The error “413 – Request Entity Too Large” indicates that web server configured to restrict large file size.
@@ -59,6 +53,4 @@ sudo nano /etc/nginx/nginx.conf
 # set client body size to 2M #
 client_max_body_size 2M;
 ------------------------------------
-php.ini location in docker phpmyadmin
-----------------------------------------------------------
 
