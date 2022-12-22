@@ -44,4 +44,4 @@ The error “413 – Request Entity Too Large” indicates that web server confi
 sudo nano /etc/nginx/nginx.conf
  set client body size to 64M 
 client_max_body_size 64M;
-And then install plugin "Big file uploads"
+And then install plugin "Big File Uploads"
