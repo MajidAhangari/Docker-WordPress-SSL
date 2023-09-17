@@ -127,3 +127,13 @@ Exit the WordPress container:
 The uploaded file exceeds the upload_max_filesize directive in php.ini.
 
 
+
+********************JUST DO THIS**IMPORTAND******************
+
+in wordpress container cd /usr/local/etc/php/  make a file name php.ini 
+nano php.ini
+and put this in it
+upload_max_filesize = 64M
+
+
+
