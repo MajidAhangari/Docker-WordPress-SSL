@@ -53,6 +53,8 @@ To resolve this issue in a Dockerized WordPress environment, you'll need to adju
 
 Access the Nginx container as explained in the previous response:
 
+nginx-proxy
+
 docker exec -it <nginx_container_name_or_id> /bin/bash
 
 Navigate to the Nginx configuration directory, which typically includes a nginx.conf file or a conf.d directory:
