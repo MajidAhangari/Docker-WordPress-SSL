@@ -82,6 +82,48 @@ Now, Nginx should allow larger request bodies, and you shouldn't encounter the "
 
 *****************************IMPORTANT*************************
 
+If you're encountering an error stating that "The uploaded file exceeds the upload_max_filesize directive in php.ini" in a Dockerized WordPress environment, you need to increase the upload_max_filesize and post_max_size directives in the PHP configuration. Here's how you can do it:
+
+Access the WordPress container:
+
+docker exec -it <wordpress_container_name_or_id> /bin/bash
+
+Replace <wordpress_container_name_or_id> with the actual name or ID of your WordPress container.
+
+Navigate to the PHP configuration directory. Depending on your PHP version and setup, the PHP configuration file may be named php.ini, php.ini-development, or php.ini-production. Common locations include /usr/local/etc/php/php.ini or /etc/php/7.x/php.ini, where 7.x is the PHP version you are using. Use the find command to locate the file if needed:
+
+find /etc -name php.ini
+
+Edit the PHP configuration file using a text editor like nano or vim:
+
+
+nano /path/to/php.ini
+
+Replace /path/to/php.ini with the actual path to your PHP configuration file.
+
+Inside the PHP configuration file, locate the following lines:
+
+upload_max_filesize = 2M
+post_max_size = 8M
+
+Change the values to increase the upload_max_filesize and post_max_size directives to a value that suits your needs. For example:
+upload_max_filesize = 64M
+post_max_size = 64M
+
+Be sure to use the same value for both directives.
+
+Save the changes and exit the text editor.
+
+Restart the PHP service within the WordPress container to apply the changes:
+
+service php7.4-fpm restart  # Use the appropriate PHP version (e.g., php7.4-fpm)
+
+Exit the WordPress container:
+
+
+
+
+
 The uploaded file exceeds the upload_max_filesize directive in php.ini.
 
 
