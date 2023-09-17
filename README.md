@@ -45,3 +45,41 @@ sudo nano /etc/nginx/nginx.conf
  set client body size to 64M 
 client_max_body_size 64M;
 And then install plugin "Big File Uploads"
+
+*****************************IMPORTANT********************
+The "413 Request Entity Too Large" error in Nginx indicates that the server is rejecting a request because the request's body size exceeds the maximum allowed size configured in Nginx. This issue is often encountered when you're trying to upload a file or submit a form with a large amount of data.
+
+To resolve this issue in a Dockerized WordPress environment, you'll need to adjust the Nginx configuration within your Nginx container. Here are the steps to do that:
+
+Access the Nginx container as explained in the previous response:
+
+docker exec -it <nginx_container_name_or_id> /bin/bash
+
+Navigate to the Nginx configuration directory, which typically includes a nginx.conf file or a conf.d directory:
+
+cd /etc/nginx
+
+Edit the Nginx configuration file. You can use a text editor like nano or vim:
+
+
+nano nginx.conf
+
+Inside the nginx.conf file or a relevant configuration file (e.g., conf.d/wordpress.conf), you should add or modify the following directive to increase the maximum allowed request body size. This directive is typically found within an http, server, or location block:
+
+client_max_body_size 20M; # Change this value to your desired limit (e.g., 20M for 20 megabytes)
+
+service nginx restart
+
+exit
+
+Now, Nginx should allow larger request bodies, and you shouldn't encounter the "413 Request Entity Too Large" error when uploading files or submitting forms in your Dockerized WordPress environment. Remember to replace <nginx_container_name_or_id> with the actual name or ID of your Nginx container.
+
+
+
+
+
+*****************************IMPORTANT*************************
+
+The uploaded file exceeds the upload_max_filesize directive in php.ini.
+
+
